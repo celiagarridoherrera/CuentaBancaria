@@ -35,4 +35,10 @@ public class Cuenta {
     public Integer getNumRetiros() {
         return numRetiros;
     }
+
+    public Float calcularInteresMensual() {
+        float comisionMensual = saldo * (tasaAnual / 12);
+        saldo += comisionMensual;
+        return saldo;
+    }
 }
