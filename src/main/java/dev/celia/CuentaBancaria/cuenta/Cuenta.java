@@ -16,4 +16,13 @@ public class Cuenta {
     public Float getTasaAnual() {
         return tasaAnual;
     }
+
+    public void consignar(Float cantidad) {
+        saldo += cantidad;
+        numConsignaciones++;
+    }
+
+    public Integer getNumConsignaciones() {
+        return numConsignaciones;
+    }
 }
