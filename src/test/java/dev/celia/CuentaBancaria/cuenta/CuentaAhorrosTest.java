@@ -15,4 +15,11 @@ public class CuentaAhorrosTest {
         assertEquals(9000.0f, cuenta.getSaldo(), 0.001);
     }
 
+    @Test
+    void testCuentaInactivaNoPuedeRetirar(){
+        CuentaAhorros cuenta = new CuentaAhorros(9000.0f, 0.04f);
+        cuenta.retirar(1000.0f);
+        assertEquals(9000.0f, cuenta.getSaldo(), 0.001);
+    }
+
 }
