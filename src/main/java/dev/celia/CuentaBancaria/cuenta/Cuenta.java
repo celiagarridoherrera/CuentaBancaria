@@ -41,4 +41,12 @@ public class Cuenta {
         saldo += comisionMensual;
         return saldo;
     }
+
+    public String imprimirEstadoCuenta() {
+        return "Saldo: " + saldo + "\n" +
+               "Tasa Anual: " + tasaAnual + "\n" +
+               "Comision Mensual: " + comisionMensual + "\n" +
+               "Numero de Consignaciones: " + numConsignaciones + "\n" +
+               "Numero de Retiros: " + numRetiros + "\n";
+    }
 }
