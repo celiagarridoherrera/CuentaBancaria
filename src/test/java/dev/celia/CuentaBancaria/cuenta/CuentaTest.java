@@ -36,4 +36,11 @@ public class CuentaTest {
         assertEquals(5000.0f, cuenta.getSaldo(), 0.001);
         assertEquals(0, cuenta.getNumRetiros());
     }
+
+    @Test
+    void calcularInteresMensualCorrecto(){
+        Cuenta cuenta = new Cuenta(12000.0f, 0.12f);
+        Float interesMensual = cuenta.calcularInteresMensual();
+        assertEquals(12120.0f, interesMensual, 0.001);
+    }
 }
