@@ -25,4 +25,14 @@ public class Cuenta {
     public Integer getNumConsignaciones() {
         return numConsignaciones;
     }
+
+    public void retirar(Float cantidad) {
+        if (cantidad <= saldo) {
+        saldo -= cantidad;
+        numRetiros++;
+        }
+    }
+    public Integer getNumRetiros() {
+        return numRetiros;
+    }
 }
