@@ -28,4 +28,12 @@ public class CuentaTest {
         assertEquals(4000.0f, cuenta.getSaldo(), 0.001);
         assertEquals(1, cuenta.getNumRetiros());
     }
+
+    @Test
+    void testRetirarMasDeLoQueHayNoDisminuyeSaldoNiNumRetiros(){
+        Cuenta cuenta = new Cuenta(5000.0f, 0.05f);
+        cuenta.retirar(6000.0f);
+        assertEquals(5000.0f, cuenta.getSaldo(), 0.001);
+        assertEquals(0, cuenta.getNumRetiros());
+    }
 }
