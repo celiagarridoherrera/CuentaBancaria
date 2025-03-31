@@ -43,4 +43,17 @@ public class CuentaTest {
         Float interesMensual = cuenta.calcularInteresMensual();
         assertEquals(12120.0f, interesMensual, 0.001);
     }
+
+    @Test
+    void testImprimirEstadoCuenta(){
+        Cuenta cuenta = new Cuenta(5000.0f, 0.05f);
+        cuenta.consignar(1000.0f);
+        cuenta.retirar(2000.0f);
+        String estadoEsperado = "Saldo: 4000.0\n" +
+                                 "Tasa Anual: 0.05\n" +
+                                 "Comision Mensual: 0.0\n" +
+                                 "Numero de Consignaciones: 1\n" +
+                                 "Numero de Retiros: 1\n";
+        assertEquals(estadoEsperado, cuenta.imprimirEstadoCuenta());
+    }
 }
